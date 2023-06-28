@@ -43,4 +43,4 @@ jobs:
       - name: list files
         run: |
           sudo cp -R drop/ /home/artifact
-          sudo ls -lrth /home/artifact
+          sudo ls -lrth /home/artifact/drop
