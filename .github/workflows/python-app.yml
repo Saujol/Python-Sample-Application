@@ -48,5 +48,6 @@ jobs:
         run: |
           sudo find . -name "drop-artifact*"
           sudo find /home/ -name "drop-artifact*"
+          sudo find / -name "drop-artifact*"
           
           
