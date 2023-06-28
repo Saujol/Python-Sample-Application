@@ -39,8 +39,14 @@ jobs:
           # Destination path
           path: /home/artifact
 
-
       - name: list files
         run: |
           sudo cp -R drop/ /home/artifact
           sudo ls -lrth /home/artifact/drop
+          
+      - name: Find Artifact
+        run: |
+          find . -name "drop-artifact*"
+          find /home/ -name "drop-artifact*"
+          
+          
