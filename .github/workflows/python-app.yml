@@ -46,7 +46,7 @@ jobs:
           
       - name: Find Artifact
         run: |
-          find . -name "drop-artifact*"
-          find /home/ -name "drop-artifact*"
+          sudo find . -name "drop-artifact*"
+          sudo find /home/ -name "drop-artifact*"
           
           
