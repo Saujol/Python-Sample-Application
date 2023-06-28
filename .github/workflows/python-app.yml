@@ -18,7 +18,7 @@ jobs:
         run: |
           sudo mkdir -p drop  # Create a directory to store the copied files
           sudo chmod 775 drop
-          sudo cp -r src/* drop/  # Copy the files to the directory
+          sudo cp -r /* drop/  # Copy the files to the directory
 
       - name: Create artifact
         uses: actions/upload-artifact@v2
