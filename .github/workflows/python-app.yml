@@ -16,9 +16,9 @@ jobs:
 
       - name: Copy files
         run: |
-          sudo mkdir -p drop  # Create a directory to store the copied files
-          sudo chmod 775 drop
-          sudo cp -r test/* drop/  # Copy the files to the directory
+          sudo mkdir -p /home/artifact  # Create a directory to store the copied files
+          sudo chmod 775 /home/artifact
+          sudo cp -r test/* /home/artifact  # Copy the files to the directory
 
       - name: Create directory
         run: |
