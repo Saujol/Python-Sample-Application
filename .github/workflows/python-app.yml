@@ -20,33 +20,18 @@ jobs:
           sudo chmod 775 drop
           sudo cp -r test/* drop/  # Copy the files to the directory
 
-      - name: Create artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: drop-artifact
-          path: drop/  # Specify the
-
       - name: Create directory
         run: |
               sudo mkdir -p /home/artifact  # Create a directory to store the copied files
               sudo chmod 775 /home/artifact
-
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.1
+              
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
         with:
-          # Artifact name
           name: drop-artifact
-          # Destination path
-          path: /home/artifact
+          path: /home/artifact  # Specify the
 
       - name: list files
         run: |
-          sudo cp -R drop/ /home/artifact
-          sudo ls -lrth /home/artifact/drop
-          
-      - name: Find Artifact
-        run: |
-          sudo find /home/ -name "drop-artifact*"
-          sudo find / -name "drop-artifact*"
-          
+          sudo ls -lrth /home/artifact
           
