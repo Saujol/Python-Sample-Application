@@ -153,5 +153,3 @@ jobs:
         name: sarif-results
 
         path: sarif-results
-
-Supported languages and frameworks — CodeQL
