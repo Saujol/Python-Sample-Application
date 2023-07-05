@@ -3,7 +3,7 @@ name: CodeQL Scan
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   codeql_scan:
