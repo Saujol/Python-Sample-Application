@@ -1,0 +1,25 @@
+name: CodeQL Scan
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  codeql_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Add more steps for codeql scan as required.
+
+      - name: Save scan results
+        id: codeql-scan
+        run: echo "::set-output name=has_errors::false" # Replace this with your actual codeql scan commands and result evaluation.
+
+      - name: Upload CodeQL scan results
+        uses: actions/upload-artifact@v2
+        with:
+          name: codeql-results
+          path: ${{ github.workspace }}/path/to/codeql/results
