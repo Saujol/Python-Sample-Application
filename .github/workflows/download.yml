@@ -17,7 +17,7 @@ jobs:
       - name: Download artifacts
         shell: pwsh
         run: |
-          $access_token="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"
+          $access_token="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"
           $headers = @{
               "Authorization" = "token $access_token"
               "Accept" = "application/vnd.github+json"
