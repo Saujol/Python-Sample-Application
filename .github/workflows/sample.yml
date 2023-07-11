@@ -1,0 +1,37 @@
+name: Copy Files and Create Artifact V2
+
+on:
+  push:
+    branches:
+      - master  # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Copy files
+        run: |
+          sudo mkdir -p /home/artifact  # Create a directory to store the copied files
+          sudo chmod 775 /home/artifact
+          sudo cp -r test/* /home/artifact  # Copy the files to the directory
+
+      - name: Create directory
+        run: |
+              sudo mkdir -p /home/artifact  # Create a directory to store the copied files
+              sudo chmod 775 /home/artifact
+              
+      - name: Create artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: drop-artifact
+          path: /home/artifact  # Specify the
+
+      - name: list files new
+        run: |
+          sudo ls -lrth /home/artifact
+          
