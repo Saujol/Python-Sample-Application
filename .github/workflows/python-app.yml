@@ -31,7 +31,7 @@ jobs:
           name: drop-artifact
           path: /home/artifact  # Specify the
 
-      - name: list files
+      - name: list files new
         run: |
           sudo ls -lrth /home/artifact
           
