@@ -1,0 +1,22 @@
+name: Download Artifacts
+
+on:
+  push:
+    branches:
+      - master  # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Download
+        run: |
+          cd /home/
+          ls /home/
+          curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer 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" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/Saujol/Python-Sample-Application/actions/artifacts/797157236/zip
+          ls /home/
